@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot</title>
+    <link rel="stylesheet" href="chatbot.css">
+</head>
+<body>
+
+    <div class="chat-container">
+        <div class="chat-header">
+            <h2>LMS AI Assistance</h2>
+        </div>
+        <div class="chat-body" id="chatBody">
+            <p class="bot-message">Hello! How can I help you today?</p>
+        </div>
+        <div class="chat-input">
+            <input type="text" id="userInput" placeholder="Type a message..." autocomplete="off">
+            <button id="sendBtn">Send</button>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("sendBtn").addEventListener("click", sendMessage);
+        document.getElementById("userInput").addEventListener("keypress", function(event) {
+            if (event.key === "Enter") sendMessage();
+        });
+
+        async function sendMessage() {
+            const userInput = document.getElementById("userInput").value.trim();
+            if (!userInput) return;
+
+            const chatBody = document.getElementById("chatBody");
+            chatBody.innerHTML += `<p class="user-message">${userInput}</p>`;
+            document.getElementById("userInput").value = "";
+            chatBody.scrollTop = chatBody.scrollHeight;
+
+            try {
+                const response = await fetch("http://localhost:5000/chatbot", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ message: userInput })
+                });
+
+                const data = await response.json();
+
+                if (data.reply) {
+                    chatBody.innerHTML += `<p class="bot-message">${data.reply}</p>`;
+                } else {
+                    chatBody.innerHTML += `<p class="bot-message">Sorry, I didn't understand that.</p>`;
+                }
+            } catch (error) {
+                console.error("Error:", error);
+                chatBody.innerHTML += `<p class="bot-message">Oops! Something went wrong.</p>`;
+            }
+
+            chatBody.scrollTop = chatBody.scrollHeight;
+        }
+    </script>
+</body>
+</html>

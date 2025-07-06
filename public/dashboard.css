@@ -1,0 +1,117 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Arial", sans-serif;
+}
+
+/* Fullscreen Background */
+body {
+    background: url('dashboard-img.jpg') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Dashboard Container */
+.dashboard-container {
+    display: flex;
+    width: 80%;
+    height: 80vh;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Sidebar */
+.sidebar {
+    width: 250px;
+    background: rgba(0, 0, 0, 0.9);
+    padding: 20px;
+    color: white;
+}
+
+.sidebar h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin: 20px 0;
+}
+
+.sidebar ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: 0.3s;
+}
+
+.sidebar ul li a:hover {
+    color: cyan;
+}
+
+/* Main Content */
+.main-content { 
+        flex: 1;
+        padding: 20px;
+        color: white;
+        text-align: center;
+        margin-top: 10px; 
+}
+
+.main-content h1 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.main-content p {
+    font-size: 18px;
+    opacity: 0.8;
+}
+
+/* Course List */
+.course-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+    padding: 0 50px;
+}
+
+.course-item {
+    background: #2c3e50;  
+    padding: 20px;  
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.course-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.course-item a {
+    text-decoration: none;
+    color: white; 
+    font-size: 18px;  
+    font-weight: bold;
+}
+
+.course-item a:hover {
+    color: #f1c40f; 
+}

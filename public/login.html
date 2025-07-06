@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="page1">
+    <div class="login-container">
+        <form class="login-form">
+            <h2>Login</h2>
+            <div class="input-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="Enter your email" required>
+            </div>
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="Enter your password" required>
+            </div>
+            <button type="submit" class="login-btn">Login</button>
+            <div class="links">
+                <a href="#">Forgot Password?</a>
+                <a href="#" class="create-account">Create an Account</a> <!-- Added class here -->
+            </div>
+        </form>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const categoryLinks = document.querySelectorAll(".category-item");
+            const loginForm = document.querySelector(".login-form");
+            const createAccountLink = document.querySelector(".create-account");
+    
+            // ✅ Handle Course Category Click (Redirect to Login)
+            if (categoryLinks) {
+                categoryLinks.forEach(link => {
+                    link.addEventListener("click", function (event) {
+                        event.preventDefault();
+                        
+                        localStorage.setItem("redirectAfterLogin", "dashboard.html"); // Store dashboard redirect
+                        window.location.href = "login.html"; // Redirect to login page
+                    });
+                });
+            }
+    
+            // ✅ Handle Login Submission
+            if (loginForm) {
+                loginForm.addEventListener("submit", async function (e) {
+                    e.preventDefault(); // Prevent page refresh
+    
+                    const email = document.getElementById("email").value;
+                    const password = document.getElementById("password").value;
+    
+                    const response = await fetch("http://localhost:5000/auth/login", {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify({ email, password })
+                    });
+    
+                    const data = await response.json();
+    
+                    if (response.ok) {
+                        localStorage.setItem("user", JSON.stringify(data.user)); // Store user session
+    
+                        // Check if a redirect path is set; otherwise, go to dashboard
+                        const redirectPage = localStorage.getItem("redirectAfterLogin") || "dashboard.html";
+                        localStorage.removeItem("redirectAfterLogin"); // Clear redirect data
+                        window.location.href = redirectPage;
+                    } else {
+                        alert(data.message);
+                    }
+                });
+            }
+    
+            // ✅ Handle "Create Account" Click (Redirect to Signup Page)
+            if (createAccountLink) {
+                createAccountLink.addEventListener("click", function (event) {
+                    event.preventDefault();
+                    window.location.href = "signup.html";
+                });
+            }
+        });
+    </script>
+    
+    
+    
+</body>
+</html>

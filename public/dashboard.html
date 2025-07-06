@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <script defer src="dashboard.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <nav class="sidebar">
+            <h2>LMS Dashboard</h2>
+            <ul>
+                <li><a href="#" id="courseCategories"><i class="fa-solid fa-book"></i> WebDev Courses</a></li>
+                <li><a href="#" id="courseDetails"><i class="fa-solid fa-info-circle"></i> CS Courses</a></li>
+                <li><a href="#" id="certificate"><i class="fa-solid fa-sign-out-alt"></i> Certificate</a></li>
+                <li><a href="#" id="logout"><i class="fa-solid fa-sign-out-alt"></i> Logout</a></li>                
+            </ul>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <h1>Welcome to the Dashboard</h1>
+            <p>Select a course category or view course details.</p>
+            <div id="courseList" class="course-list">
+                <!-- Course links will be dynamically added here -->
+            </div>
+        </main>
+    </div>
+
+    <!-- ✅ Chatbot Integration -->
+    <button id="chatbot-toggle">Chat with AI</button>
+    <iframe id="chatbot-frame" src="chatbot.html"></iframe>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const courseCategoriesBtn = document.getElementById("courseCategories");
+            const courseDetailsBtn = document.getElementById("courseDetails");
+            const courseList = document.getElementById("courseList");
+
+            // Course Categories
+            const courseCategories = {
+                "development": "Development",
+                "designing": "Designing",
+                "photography": "Photography",
+                "video-editing": "Video Editing",
+            };
+
+            // Course Details
+            const courseDetails = {
+                "html-css": "HTML & CSS",
+                "javascript": "JavaScript",
+                "cloud-computing": "Cloud Computing",
+                "ai": "Artificial Intelligence",
+                "machine-learning": "Machine Learning",
+                "devops": "DevOps",
+                "nosql": "NoSQL",
+                "sql": "SQL",
+                "dsa": "Data Structures & Algorithms"
+            };
+
+            function renderCourses(courses, targetPage) {
+                courseList.innerHTML = ""; // Clear previous content
+                Object.keys(courses).forEach(course => {
+                    const courseItem = document.createElement("div");
+                    courseItem.classList.add("course-item");
+                    courseItem.innerHTML = `<a href="${targetPage}?course=${course}">${courses[course]}</a>`;
+                    courseList.appendChild(courseItem);
+                });
+            }
+
+            // Load Course Categories
+            courseCategoriesBtn.addEventListener("click", function () {
+                renderCourses(courseCategories, "course-category.html");
+            });
+
+            // Load Course Details
+            courseDetailsBtn.addEventListener("click", function () {
+                renderCourses(courseDetails, "course-details.html");
+            });
+
+            // Logout
+            document.getElementById("logout").addEventListener("click", function (event) {
+                event.preventDefault();
+                localStorage.removeItem("user");
+                localStorage.removeItem("token");
+                window.location.href = "login.html";
+            });
+
+            // ✅ Chatbot Toggle Functionality
+            const chatbotToggle = document.getElementById("chatbot-toggle");
+            const chatbotFrame = document.getElementById("chatbot-frame");
+
+            chatbotToggle.addEventListener("click", function () {
+                if (chatbotFrame.style.display === "block") {
+                    chatbotFrame.style.display = "none";
+                } else {
+                    chatbotFrame.style.display = "block";
+                }
+            });
+
+            // Hide Chatbot initially
+            chatbotFrame.style.display = "none";
+        });
+    </script>
+
+    <style>
+        /* ✅ Chatbot Styles */
+        #chatbot-toggle {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        #chatbot-frame {
+            position: fixed;
+            bottom: 70px;
+            right: 20px;
+            width: 350px;
+            height: 450px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            display: none;
+            background: white;
+        }
+    </style>
+
+</body>
+</html>

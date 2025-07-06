@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Category</title>
+    <link rel="stylesheet" href="course-category.css">
+</head>
+<body>
+
+    <div class="course-container">
+        <h1 id="course-title">Course Name</h1>
+
+        <div class="course-content">
+            <h2>Videos</h2>
+            <div id="videos" class="video-row"></div>
+        </div>
+
+        <div class="course-content">
+            <h2>PDF Resources</h2>
+            <div id="pdfs" class="pdf-row"></div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const params = new URLSearchParams(window.location.search);
+            const courseKey = params.get("course");
+        
+            const courseData = {
+                "development": {
+                    title: "Development",
+                    videos: [
+                        { title: "Intro to Web Dev", url: "https://www.youtube.com/embed/qz0aGYrrlhU" },
+                        { title: "JavaScript Basics", url: "https://www.youtube.com/embed/W6NZfCO5SIk" },
+                        { title: "Intro to Web Dev", url: "https://www.youtube.com/embed/qz0aGYrrlhU" },
+                        { title: "JavaScript Basics", url: "https://www.youtube.com/embed/W6NZfCO5SIk" },
+                        { title: "Intro to Web Dev", url: "https://www.youtube.com/embed/qz0aGYrrlhU" },
+                        { title: "JavaScript Basics", url: "https://www.youtube.com/embed/W6NZfCO5SIk" }
+                    ],
+                    pdfs: [
+                        { title: "Web Dev Guide", url: "pdfs/htmlcss.pdf" },
+                        { title: "Web Dev Guide", url: "pdfs/htmlcss1.pdf" }
+                    ]
+                },
+
+                "designing": {
+                    title: "Designing",
+                    videos: [
+                        { title: "Intro to Designing", url: "https://www.youtube.com/embed/GQS7wPujL2k" },
+                        { title: "Intro to Designing", url: "https://www.youtube.com/embed/GQS7wPujL2k" },
+                        { title: "Intro to Designing", url: "https://www.youtube.com/embed/GQS7wPujL2k" },
+                        { title: "Intro to Designing", url: "https://www.youtube.com/embed/GQS7wPujL2k" },
+                        { title: "Intro to Designing", url: "https://www.youtube.com/embed/GQS7wPujL2k" },
+                        { title: "Intro to Designing", url: "https://www.youtube.com/embed/GQS7wPujL2k" }
+                    ],
+                    pdfs: [
+                        { title: "Web Dev Guide", url: "pdfs/designing.pdf" },
+                        { title: "Web Dev Guide", url: "pdfs/designing.pdf" }
+                    ]
+                },
+
+                "photography": {
+                    title: "Photography",
+                    videos: [
+                        { title: "Intro to Photograpgy", url: "https://www.youtube.com/embed/MNjdvKscuhc" },
+                        { title: "Intro to Photograpgy", url: "https://www.youtube.com/embed/MNjdvKscuhc" },
+                        { title: "Intro to Photograpgy", url: "https://www.youtube.com/embed/MNjdvKscuhc" },
+                        { title: "Intro to Photograpgy", url: "https://www.youtube.com/embed/MNjdvKscuhc" },
+                        { title: "Intro to Photograpgy", url: "https://www.youtube.com/embed/MNjdvKscuhc" },
+                        { title: "Intro to Photograpgy", url: "https://www.youtube.com/embed/MNjdvKscuhc" }
+                    ],
+                    pdfs: [
+                        { title: "Web Dev Guide", url: "pdfs/photography.pdf" },
+                        { title: "Web Dev Guide", url: "pdfs/photography.pdf" }
+                    ]
+                },
+
+                "video-editing": {
+                    title: "Video Editing",
+                    videos: [
+                        { title: "Intro to Dev", url: "https://www.youtube.com/embed/EI-VK3y5Y_0" },
+                        { title: "Intro to Dev", url: "https://www.youtube.com/embed/EI-VK3y5Y_0" },
+                        { title: "Intro to Dev", url: "https://www.youtube.com/embed/EI-VK3y5Y_0" },
+                        { title: "Intro to Dev", url: "https://www.youtube.com/embed/EI-VK3y5Y_0" },
+                        { title: "Intro to Dev", url: "https://www.youtube.com/embed/EI-VK3y5Y_0" },
+                        { title: "Intro to Dev", url: "https://www.youtube.com/embed/EI-VK3y5Y_0" }
+                    ],
+                    pdfs: [
+                        { title: "Web Dev Guide", url: "pdfs/videoediting.pdf" },
+                        { title: "Web Dev Guide", url: "pdfs/videoediting.pdf" }
+                    ]
+                }
+                // Add other courses here...
+            };
+        
+            if (courseData[courseKey]) {
+                document.getElementById("course-title").innerText = courseData[courseKey].title;
+                const videosDiv = document.getElementById("videos");
+                const pdfsDiv = document.getElementById("pdfs");
+        
+                courseData[courseKey].videos.forEach(video => {
+                    videosDiv.innerHTML += `
+                        <div class="video-card">
+                            <iframe src="${video.url}" frameborder="0" allowfullscreen></iframe>
+                            <h3>${video.title}</h3>
+                        </div>
+                    `;
+                });
+        
+                courseData[courseKey].pdfs.forEach(pdf => {
+                    pdfsDiv.innerHTML += `
+                        <div class="pdf-card">
+                            <a href="${pdf.url}" target="_blank">${pdf.title}</a>
+                        </div>
+                    `;
+                });
+            } else {
+                document.body.innerHTML = "<h1>Course Not Found</h1>";
+            }
+        });
+        
+    </script>
+
+</body>
+</html>

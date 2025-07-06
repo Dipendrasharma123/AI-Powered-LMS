@@ -1,0 +1,203 @@
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #f9f9f9;
+    color: #333;
+    padding: 20px;
+}
+
+/* Course Category Container */
+.course-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.5s ease-in-out;
+    overflow: hidden;
+}
+
+/* Course Title */
+#course-title {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1a73e8;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+/* Course Content Section */
+.course-content {
+    margin-top: 20px;
+    width: 100%;
+    text-align: center;
+}
+
+/* Section Headers */
+.course-content h2 {
+    font-size: 1.6rem;
+    color: #444;
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+    border-bottom: 3px solid #1a73e8;
+    display: inline-block;
+}
+
+/* Video Section */
+.video-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    width: 100%;
+    padding: 10px 0;
+}
+
+/* Video Cards */
+.video-card {
+    background: #ffffff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    width: calc(33.33% - 20px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+/* Hover effect */
+.video-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    background: #f8f9fa;
+}
+
+/* Video Frame */
+iframe {
+    width: 100%;
+    height: 200px;
+    border-radius: 8px;
+    border: none;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Hover effect on the video itself */
+.video-card:hover iframe {
+    transform: scale(1.02);
+}
+
+/* Video Title */
+.video-card h3 {
+    font-size: 1rem;
+    color: #333;
+    margin-top: 10px;
+    font-weight: 600;
+    text-align: center;
+}
+
+/* Video Link Hover Effect */
+.video-link {
+    text-decoration: none;
+    color: #1a73e8;
+    transition: color 0.3s ease-in-out;
+}
+
+.video-link:hover h3 {
+    color: #ff5722;
+}
+
+/* PDF Section */
+.pdf-row {
+    width: 100%;
+    display: flex;
+    flex-direction: column; /* Stack PDFs in a single column */
+    align-items: center;
+    gap: 10px;
+    padding-top: 10px;
+}
+
+/* PDF Cards */
+.pdf-card {
+    padding: 10px;
+    background: #f0f0f0;
+    width: 90%; /* Make it span most of the width */
+    text-align: center;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+}
+/* Hover effect for PDF */
+.pdf-card:hover {
+    background: #e1e1e1;
+}
+
+/* PDF Links */
+.pdf-card a {
+    text-decoration: none;
+    color: #1a73e8;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .video-card, .pdf-card {
+        width: calc(50% - 20px);
+    }
+}
+
+@media (max-width: 768px) {
+    .video-card, .pdf-card {
+        width: 100%;
+    }
+}
+
+
+.course-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.course-list li {
+    font-size: 20px; /* Increase font size */
+    color: white; /* Set text color to white */
+    background-color: #444; /* Slight background for visibility */
+    padding: 12px;
+    margin-bottom: 8px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.course-list li:hover {
+    background-color: #666; /* Hover effect */
+}
+
+

@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!--  *****   Link To Custom CSS Style Sheet   *****  -->
+	<link rel="stylesheet" type="text/css" href="style.css">
+
+	<!--  *****   Link To Font Awsome Icons   *****  -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"/>
+
+	<!--  *****   Link To Owl Carousel   *****  -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
+
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>EducaLearn- Learning Management System</title>
+</head>
+<body>
+<!--   *** Website Container Starts ***   -->
+<div class="website-container">
+	
+<!--   *** Home Section Starts ***   -->
+<section class="home" id="home">
+	<!--   === Main Navbar Starts ===   -->
+	<nav class="main-navbar">
+		<a href="course-explain.html" class="logo-container">
+			<img src="images/home/logo.png" alt="EducaLearn Logo" class="logo-img">
+			<span class="logo-text">EducaLearn</span>
+		</a>
+		<ul class="nav-list">
+			<li><a href="#home">Home</a></li>
+			<li><a href="#services">Services</a></li>
+			<li><a href="#courses">Courses</a></li>
+			<li><a href="#categories">Categories</a></li>
+			<li><a href="#instructors">Instructors</a></li>
+			<li><a href="login.html">Login</a></li>
+			<li><a href="signup.html">Sign Up</a></li>
+		</ul>
+		
+		<div class="menu-btn">
+			<span></span>
+		</div>
+	</nav>
+	<!--   === Main Navbar Ends ===   -->
+	<!--   === Banner Starts ===   -->
+	<div class="banner">
+		
+		<div class="banner-desc">
+			<h2>Start Learning With Our Experts, Anywhere, Anytime</h2>
+			<p>A Learning Management System (LMS) is a digital platform that helps educators create, manage, and deliver online courses efficiently.</p>
+			<!-- <form class="search-bar">
+				<input type="search" placeholder="Search Your Course">
+				<i class="fa-solid fa-search"></i>
+			</form> -->
+
+			<form class="search-bar">
+				<input type="search" id="search-input" placeholder="Search Your Course">
+				<i class="fa-solid fa-search" id="search-btn"></i>
+			</form>
+			
+			<!-- Search Results Container -->
+			<div id="search-results"></div>
+			
+
+			
+		</div>
+
+		<div class="banner-img">
+			<div class="banner-img-container">
+				<img src="images/home/student.jpg">
+
+				<div class="states">
+					<div class="total-courses">
+						<div class="icon">
+							<i class="fa-solid fa-book"></i>
+						</div>
+						<div class="desc">
+							<span>284+</span>
+							<span>Total Courses</span>
+						</div>
+					</div>
+
+					<div class="courses-ratings">
+						<span>4.7<i class="fa-solid fa-star"></i></span>
+						<span>Ratings (58k)</span>
+					</div>
+				</div>
+
+				<div class="pattern">
+					<img src="">
+				</div>
+
+			</div>
+		</div>
+
+	</div>
+	<!--   === Banner Ends ===   -->
+</section>
+<!--   *** Home Section Ends ***   -->
+
+
+
+<!--   *** Services Section Starts ***   -->
+<section class="services" id="services">
+	<!--   *** Services Header Starts ***   -->
+	<header class="section-header">
+		<h1>Why Choose Us</h1>
+		<p>Our Learning Management System (LMS) ensures efficient, flexible, and organized learning.</p>
+	</header>
+	<!--   *** Services Header Ends ***   -->
+	<!--   *** Services Contents Starts ***   -->
+	<div class="services-contents">
+
+		<div class="service-box">
+			<div class="service-icon">
+				<i class="fa-solid fa-calendar"></i>
+			</div>
+			<div class="service-desc">
+				<h2>Flexible Timing</h2>
+				<p>Allows learners to access content and complete courses at their own pace, accommodating personal schedules and promoting better engagement and retention.</p>
+			</div>
+			
+		</div>
+
+		<div class="service-box">
+			<div class="service-icon">
+				<i class="fa-solid fa-users"></i>
+			</div>
+			<div class="service-desc">
+				<h2>Expert Teachers</h2>
+				<p>Teacher with deep knowledge of their subject and effective teaching methods to engage and guide students.</p>
+			</div>
+		</div>
+
+		<div class="service-box">
+			<div class="service-icon">
+				<i class="fa-solid fa-clock"></i>
+			</div>
+			<div class="service-desc">
+				<h2>24/7 Live Support</h2>
+				<p>Provides learners with round-the-clock access to assistance, whether for technical issues or academic help.</p>
+			</div>
+		</div>
+
+	</div>
+	<!--   *** Services Contents Ends ***   -->
+</section>
+<!--   *** Services Section Ends ***   -->
+
+<!--   *** Courses Section Starts ***   -->
+<section class="courses" id="courses">
+	<!--   *** Courses Header Starts ***   -->
+	<header class="section-header">
+		<div class="header-text">
+			<h1>Choose Your Favourite Course</h1>
+			<p>Our LMS system allows students to choose their favorite subjects providing access to a wide range of courses.</p>
+		</div>
+		<button class="courses-btn btn">View All</button>
+	</header>
+	<!--   *** Courses Header Ends ***   -->
+	<!--   *** Courses Contents Starts ***   -->
+	<div class="course-contents">
+		<a href="course-details.html?course=html-css" class="course-card">
+			<img src="images/courses/course-1.png">
+			<div class="category">
+				<div class="subject"><h3>Enroll</h3></div>
+				<img src="images/courses/teacher-1.jpeg">
+			</div>
+			<h2 class="course-title">CSS and HTML</h2>
+			<div class="course-desc">
+				<span><i class="fa-solid fa-video"></i> 20 Videos</span>
+				<span><i class="fa-solid fa-users"></i> 2067+ Students</span>
+			</div>
+			<div class="course-ratings">
+				<span>4.8 <i class="fa-solid fa-star"></i></span>
+				<span><b>$</b>110.00</span>
+			</div>
+		</a>
+	
+		<a href="course-details.html?course=javascript" class="course-card">
+			<img src="images/courses/course-9.jpg">
+			<div class="category">
+				<div class="subject"><h3>Enroll</h3></div>
+				<img src="images/courses/teacher-3.jpeg">
+			</div>
+			<h2 class="course-title">JavaScript</h2>
+			<div class="course-desc">
+				<span><i class="fa-solid fa-video"></i> 60 Videos</span>
+				<span><i class="fa-solid fa-users"></i> 2469+ Students</span>
+			</div>
+			<div class="course-ratings">
+				<span>4.7 <i class="fa-solid fa-star"></i></span>
+				<span><b>$</b>120.00</span>
+			</div>
+		</a>
+	
+		<a href="course-details.html?course=cloud-computing" class="course-card">
+			<img src="images/courses/course-2.jpeg">
+			<div class="category">
+				<div class="subject"><h3>Enroll</h3></div>
+				<img src="images/courses/teacher-2.jpeg">
+			</div>
+			<h2 class="course-title">Cloud Computing</h2>
+			<div class="course-desc">
+				<span><i class="fa-solid fa-video"></i> 35 Videos</span>
+				<span><i class="fa-solid fa-users"></i> 2523+ Students</span>
+			</div>
+			<div class="course-ratings">
+				<span>4.9 <i class="fa-solid fa-star"></i></span>
+				<span><b>$</b>150.00</span>
+			</div>
+		</a>
+	
+		<a href="course-details.html?course=ai" class="course-card">
+			<img src="images/courses/course-3.jpeg">
+			<div class="category">
+				<div class="subject"><h3>Enroll</h3></div>
+				<img src="images/courses/teacher-3.jpeg">
+			</div>
+			<h2 class="course-title">Artificial Intelligence</h2>
+			<div class="course-desc">
+				<span><i class="fa-solid fa-video"></i> 45 Videos</span>
+				<span><i class="fa-solid fa-users"></i> 2287+ Students</span>
+			</div>
+			<div class="course-ratings">
+				<span>4.7 <i class="fa-solid fa-star"></i></span>
+				<span><b>$</b>120.00</span>
+			</div>
+		</a>
+	
+		<a href="course-details.html?course=machine-learning" class="course-card">
+			<img src="images/courses/course-4.jpeg">
+			<div class="category">
+				<div class="subject"><h3>Enroll</h3></div>
+				<img src="images/courses/teacher-4.jpeg">
+			</div>
+			<h2 class="course-title">Machine Learning</h2>
+			<div class="course-desc">
+				<span><i class="fa-solid fa-video"></i> Videos</span>
+				<span><i class="fa-solid fa-users"></i> 1656+ Students</span>
+			</div>
+			<div class="course-ratings">
+				<span>4.5 <i class="fa-solid fa-star"></i></span>
+				<span><b>$</b>140.00</span>
+			</div>
+		</a>
+	
+		<a href="course-details.html?course=devops" class="course-card">
+			<img src="images/courses/course-5.jpeg">
+			<div class="category">
+				<div class="subject"><h3>Enroll</h3></div>
+				<img src="images/courses/teacher-5.jpeg">
+			</div>
+			<h2 class="course-title">DevOps</h2>
+			<div class="course-desc">
+				<span><i class="fa-solid fa-video"></i> 50 Videos</span>
+				<span><i class="fa-solid fa-users"></i> 1486+ Students</span>
+			</div>
+			<div class="course-ratings">
+				<span>4.8 <i class="fa-solid fa-star"></i></span>
+				<span><b>$</b>100.00</span>
+			</div>
+		</a>
+	
+		<a href="course-details.html?course=nosql" class="course-card">
+			<img src="images/courses/course-6.jpeg">
+			<div class="category">
+				<div class="subject"><h3>Enroll</h3></div>
+				<img src="images/courses/teacher-6.jpeg">
+			</div>
+			<h2 class="course-title">NoSQL</h2>
+			<div class="course-desc">
+				<span><i class="fa-solid fa-video"></i> 50 Videos</span>
+				<span><i class="fa-solid fa-users"></i> 3187+ Students</span>
+			</div>
+			<div class="course-ratings">
+				<span>4.9 <i class="fa-solid fa-star"></i></span>
+				<span><b>$</b>160.00</span>
+			</div>
+		</a>
+	
+		<a href="course-details.html?course=sql" class="course-card">
+			<img src="images/courses/course-7.jpg">
+			<div class="category">
+				<div class="subject"><h3>Enroll</h3></div>
+				<img src="images/courses/teacher-3.jpeg">
+			</div>
+			<h2 class="course-title">SQL</h2>
+			<div class="course-desc">
+				<span><i class="fa-solid fa-video"></i> 37 Videos</span>
+				<span><i class="fa-solid fa-users"></i> 1677+ Students</span>
+			</div>
+			<div class="course-ratings">
+				<span>4.8 <i class="fa-solid fa-star"></i></span>
+				<span><b>$</b>130.00</span>
+			</div>
+		</a>
+	
+		<a href="course-details.html?course=dsa" class="course-card">
+			<img src="images/courses/course-8.jpeg">
+			<div class="category">
+				<div class="subject"><h3>Enroll</h3></div>
+				<img src="images/courses/teacher-3.jpeg">
+			</div>
+			<h2 class="course-title">Data Structure and Algorithm</h2>
+			<div class="course-desc">
+				<span><i class="fa-solid fa-video"></i> 80 Videos</span>
+				<span><i class="fa-solid fa-users"></i> 3000+ Students</span>
+			</div>
+			<div class="course-ratings">
+				<span>4.8 <i class="fa-solid fa-star"></i></span>
+				<span><b>$</b>160.00</span>
+			</div>
+		</a>
+	</div>
+	
+
+
+		
+
+	</div>
+	<!--   *** Courses Contents Ends ***   -->
+</section>
+<!--   *** Courses Section Ends ***   -->
+
+<!--   *** Courses Categories Section Starts ***   -->
+<section class="categories" id="categories">
+    <header class="section-header">
+        <h1>Courses By Categories</h1>
+        <p>Offers courses across various categories, allowing students to choose subjects based on their interests.</p>
+    </header>
+
+    <div class="categories-contents">
+        
+        <a href="course-category.html?course=development" class="category-item">
+            <div class="category-icon">
+                <i class="fa-solid fa-code"></i>
+            </div>
+            <div class="category-desc">
+                <h3>Development</h3>
+                <p>Focus on enhancing technical and professional skills like programming, web development, etc.</p>
+            </div>
+        </a>
+
+        <a href="course-category.html?course=designing" class="category-item">
+            <div class="category-icon">
+                <i class="fa-solid fa-palette"></i>
+            </div>
+            <div class="category-desc">
+                <h3>Designing</h3>
+                <p>Involves structuring content effectively with videos, quizzes, interactive elements, etc.</p>
+            </div>
+        </a>
+
+        <a href="course-category.html?course=photography" class="category-item">
+            <div class="category-icon">
+                <i class="fa-solid fa-camera"></i>
+            </div>
+            <div class="category-desc">
+                <h3>Photography</h3>
+                <p>Learn skills like composition, lighting, editing, and camera techniques.</p>
+            </div>
+        </a>
+
+        <a href="course-category.html?course=video-editing" class="category-item">
+            <div class="category-icon">
+                <i class="fa-solid fa-bullhorn"></i>
+            </div>
+            <div class="category-desc">
+                <h3>Video Editing</h3>
+                <p>Unlock professional video editing skills to transform raw footage into stunning videos.</p>
+            </div>
+        </a>
+
+    </div>
+</section>
+
+<!--   *** Courses Categories Section Ends ***   -->
+
+
+
+<!-- *** Instructors Section Starts *** -->
+<section class="instructors" id="instructors">
+    <!-- === Instructors Section Header Starts === -->
+    <header class="section-header">
+        <h1>Our Instructors</h1>
+        <p>Meet our experienced and dedicated instructors who are here to guide you.</p>
+    </header>
+    <!-- === Instructors Section Header Ends === -->
+
+    <!-- === Instructors Contents Starts === -->
+    <div class="instructor-container">
+
+        <div class="instructor-card">
+            <div class="instructor-image">
+                <img src="images/instructors/img-1.webp" alt="Instructor">
+            </div>
+            <div class="instructor-info">
+                <h3>Linus Torvalds</h3>
+                <span>Mathematics Expert</span>
+                <p>10+ years of experience in DSA and OOPs concept</p>
+            </div>
+        </div>
+		
+
+        <div class="instructor-card">
+            <div class="instructor-image">
+                <img src="images/instructors/img-2.webp" alt="Instructor">
+            </div>
+            <div class="instructor-info">
+                <h3>Anil K. Jain</h3>
+                <span>Data Science Instructor</span>
+                <p>Specialist in Python, Machine Learning, and Data Analysis.</p>
+            </div>
+        </div>
+
+        <div class="instructor-card">
+            <div class="instructor-image">
+                <img src="images/instructors/img-3.jpeg" alt="Instructor">
+            </div>
+            <div class="instructor-info">
+                <h3>Jiawei Han</h3>
+                <span>Web Development Mentor</span>
+                <p>Expert in HTML, CSS, JavaScript, and modern web frameworks.</p>
+            </div>
+        </div>
+
+        <div class="instructor-card">
+            <div class="instructor-image">
+                <img src="images/instructors/img-4.jpg" alt="Instructor">
+            </div>
+            <div class="instructor-info">
+                <h3>Yoshua Bengio</h3>
+                <span>Artificial Intelligence Specialist</span>
+                <p>Researcher in AI and Deep Learning with 8+ years of experience.</p>
+            </div>
+        </div>
+
+    </div>
+    <!-- === Instructors Contents Ends === -->
+</section>
+<!-- *** Instructors Section Ends *** -->
+
+
+
+<!--   *** Footer Section Starts ***   -->
+<section class="footer" id="footer">
+	
+	<!--   === Footer Contents Starts ===   -->
+	<div class="footer-contents">
+		
+		<div class="footer-col footer-col-1">
+			<div class="col-title">
+				<img src="images/home/logo.png">
+			</div>
+			<div class="col-contents">
+				<p>Offers a diverse range of courses of different interests such as technology, marketing, photography etc. </p>
+				<p>Provides an engaging learning experience with interactive content, expert instructors, and the ability to learn at one's own pace.</p>
+			</div>
+		</div>
+
+		<div class="footer-col footer-col-2">
+			<div class="col-title">
+				<h3>Contact</h3>
+			</div>
+			<div class="col-contents">
+				<div class="contact-row">
+					<span>Address</span>
+					<span>Jakkasandra, Banglore, India</span>
+				</div>
+				<div class="contact-row">
+					<span>Phone</span>
+					<span>7398065876</span>
+				</div>
+				<div class="contact-row">
+					<span>Website</span>
+					<span>EducaLearn.com</span>
+				</div>
+				<div class="contact-row">
+					<span>Email</span>
+					<span>info@EducaLearn.com</span>
+				</div>
+			</div>
+		</div>
+
+		<div class="footer-col footer-col-3">
+			<div class="col-title">
+				<h3>Quick Links</h3>
+			</div>
+			<div class="col-contents">
+				<a href="#">Home</a>
+				<a href="#">Services</a>
+				<a href="#">Courses</a>
+				<a href="#">Categories</a>
+				<a href="#">Instructors</a>
+				<a href="#login">Login</a>
+			    <a href="#signup">Sign Up</a>
+			</div>
+		</div>
+
+		<div class="footer-col footer-col-4">
+			<div class="col-title">
+				<h3>Newsletter</h3>
+			</div>
+			<div class="col-contents">
+				<form class="newsletter">
+					<input type="email" placeholder="Your Email">
+					<button class="newsletter-btn btn" type="submit">Subscribe</button>
+				</form>
+			</div>
+		</div>
+
+	</div>
+	<!--   === Footer Contents Ends ===   -->
+	<div class="copy-rights">
+		<p>Created By <b>Mr. Dipendra Sharma</b> | All Rights Reserved</p>
+	</div>
+
+</section>
+<!--   *** Footer Section Ends ***   -->
+
+
+</div>
+<!--   *** Website Container Ends ***   -->
+
+
+
+<!--   *** Link To JQuery ***   -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+
+<!--   *** Link To Owl Carousel ***   -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+<!--   *** Link To Curstom Script File ***   -->
+<script type="text/javascript" src="script.js"></script>
+</body>
+</html>

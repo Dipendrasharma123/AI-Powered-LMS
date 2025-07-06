@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Details</title>
+    <link rel="stylesheet" href="course-details.css">
+</head>
+<body>
+
+    <div class="course-container">
+        <h1 id="course-title">Course Name</h1>
+
+        <div class="course-content">
+            <h2>Videos</h2>
+            <div id="videos" class="videos-grid"></div>
+        </div>
+
+        <div class="course-content">
+            <h2>PDF Resources</h2>
+            <div id="pdfs"></div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+    const params = new URLSearchParams(window.location.search);
+    const courseKey = params.get("course");
+
+    const courseData = {
+        "html-css": {
+            title: "CSS and HTML",
+            videos: [
+                { title: "Introduction to HTML", url: "https://www.youtube.com/embed/qz0aGYrrlhU" },
+                { title: "Introduction to HTML", url: "https://www.youtube.com/embed/qz0aGYrrlhU" },
+                { title: "Introduction to HTML", url: "https://www.youtube.com/embed/qz0aGYrrlhU" },
+                { title: "Introduction to HTML", url: "https://www.youtube.com/embed/qz0aGYrrlhU" },
+                { title: "Introduction to HTML", url: "https://www.youtube.com/embed/qz0aGYrrlhU" },
+                { title: "Introduction to HTML", url: "https://www.youtube.com/embed/qz0aGYrrlhU" }
+            ],
+            pdfs: [
+                { title: "HTML Guide", url: "pdfs/htmlcss1.pdf" },
+                { title: "HTML Guide", url: "pdfs/htmlcss.pdf" }
+            ]
+        },
+
+        "javascript": {
+            title: "JavaScript",
+            videos: [
+                { title: "Introduction to JavaScript", url: "https://www.youtube.com/embed/ajdRvxDWH4w" },
+                { title: "Introduction to JavaScript", url: "https://www.youtube.com/embed/ajdRvxDWH4w" },
+                { title: "Introduction to JavaScript", url: "https://www.youtube.com/embed/ajdRvxDWH4w" },
+                { title: "Introduction to JavaScript", url: "https://www.youtube.com/embed/ajdRvxDWH4w" },
+                { title: "Introduction to JavaScript", url: "https://www.youtube.com/embed/ajdRvxDWH4w" },
+                { title: "Introduction to JavaScript", url: "https://www.youtube.com/embed/ajdRvxDWH4w" }
+            ],
+            pdfs: [
+                { title: "JavaScript Guide", url: "pdfs/js.pdf" },
+                { title: "JavaScript Guide", url: "pdfs/js.pdf" }
+            ]
+        },
+
+        "cloud-computing": {
+            title: "Cloud Computing",
+            videos: [
+                { title: "Introduction to Cloud Computing", url: "https://www.youtube.com/embed/6b7m-gpwgsQ" },
+                { title: "Introduction to Cloud Computing", url: "https://www.youtube.com/embed/6b7m-gpwgsQ" },
+                { title: "Introduction to Cloud Computing", url: "https://www.youtube.com/embed/6b7m-gpwgsQ" },
+                { title: "Introduction to Cloud Computing", url: "https://www.youtube.com/embed/6b7m-gpwgsQ" },
+                { title: "Introduction to Cloud Computing", url: "https://www.youtube.com/embed/6b7m-gpwgsQ" },
+                { title: "Introduction to Cloud Computing", url: "https://www.youtube.com/embed/6b7m-gpwgsQ" },
+                
+            ],
+            pdfs: [
+                { title: "Cloud Computing Guide", url: "pdfs/cc.pdf" },
+                { title: "Cloud Computing Guide", url: "pdfs/cc.pdf" }
+            ]
+        },
+
+        "ai": {
+            title: "Artificial Intelligence",
+            videos: [
+                { title: "Introduction to Artificial Intelligence", url: "https://www.youtube.com/embed/JMUxmLyrhSk" },
+                { title: "Introduction to Artificial Intelligence", url: "https://www.youtube.com/embed/JMUxmLyrhSk" },
+                { title: "Introduction to Artificial Intelligence", url: "https://www.youtube.com/embed/JMUxmLyrhSk" },
+                { title: "Introduction to Artificial Intelligence", url: "https://www.youtube.com/embed/JMUxmLyrhSk" },
+                { title: "Introduction to Artificial Intelligence", url: "https://www.youtube.com/embed/JMUxmLyrhSk" },
+                { title: "Introduction to Artificial Intelligence", url: "https://www.youtube.com/embed/JMUxmLyrhSk" }
+            ],
+            pdfs: [
+                { title: "Artificial Intelligence Guide", url: "pdfs/ai.pdf" },
+                { title: "Artificial Intelligence Guide", url: "pdfs/ai.pdf" }
+            ]
+        },
+
+        "machine-learning": {
+            title: "Machine Learning",
+            videos: [
+                { title: "Introduction to Machine Learning", url: "https://www.youtube.com/embed/LvC68w9JS4Y" },
+                { title: "Introduction to Machine Learning", url: "https://www.youtube.com/embed/LvC68w9JS4Y" },
+                { title: "Introduction to Machine Learning", url: "https://www.youtube.com/embed/LvC68w9JS4Y" },
+                { title: "Introduction to Machine Learning", url: "https://www.youtube.com/embed/LvC68w9JS4Y" },
+                { title: "Introduction to Machine Learning", url: "https://www.youtube.com/embed/LvC68w9JS4Y" },
+                { title: "Introduction to Machine Learning", url: "https://www.youtube.com/embed/LvC68w9JS4Y" }
+            ],
+            pdfs: [
+                { title: "Machine Learning Guide", url: "pdfs/ml.pdf" },
+                { title: "Machine Learning Guide", url: "pdfs/ml.pdf" }
+            ]
+        },
+
+        "devops": {
+            title: "DevOps",
+            videos: [
+                { title: "Introduction to DevOps", url: "https://www.youtube.com/embed/lGg3VF2RScI" },
+                { title: "Introduction to DevOps", url: "https://www.youtube.com/embed/lGg3VF2RScI" },
+                { title: "Introduction to DevOps", url: "https://www.youtube.com/embed/lGg3VF2RScI" },
+                { title: "Introduction to DevOps", url: "https://www.youtube.com/embed/lGg3VF2RScI" },
+                { title: "Introduction to DevOps", url: "https://www.youtube.com/embed/lGg3VF2RScI" },
+                { title: "Introduction to DevOps", url: "https://www.youtube.com/embed/lGg3VF2RScI" }
+            ],
+            pdfs: [
+                { title: "DevOps Guide", url: "devops.pdf" },
+                { title: "DevOps Guide", url: "devops.pdf" }
+            ]
+        },
+
+        "nosql": {
+            title: "NoSQL",
+            videos: [
+                { title: "Introduction to NoSQL", url: "https://www.youtube.com/embed/xh4gy1lbL2k" },
+                { title: "Introduction to NoSQL", url: "https://www.youtube.com/embed/xh4gy1lbL2k" },
+                { title: "Introduction to NoSQL", url: "https://www.youtube.com/embed/xh4gy1lbL2k" },
+                { title: "Introduction to NoSQL", url: "https://www.youtube.com/embed/xh4gy1lbL2k" },
+                { title: "Introduction to NoSQL", url: "https://www.youtube.com/embed/xh4gy1lbL2k" },
+                { title: "Introduction to NoSQL", url: "https://www.youtube.com/embed/xh4gy1lbL2k" }
+            ],
+            pdfs: [
+                { title: "NoSQL Guide", url: "pdfs/nosql.pdf" },
+                { title: "NoSQL Guide", url: "pdfs/nosql1.pdf" }
+            ]
+        },
+
+        "sql": {
+            title: "SQL",
+            videos: [
+                { title: "Introduction to SQL", url: "https://www.youtube.com/embed/hlGoQC332VM" },
+                { title: "Introduction to SQL", url: "https://www.youtube.com/embed/hlGoQC332VM" },
+                { title: "Introduction to SQL", url: "https://www.youtube.com/embed/hlGoQC332VM" },
+                { title: "Introduction to SQL", url: "https://www.youtube.com/embed/hlGoQC332VM" },
+                { title: "Introduction to SQL", url: "https://www.youtube.com/embed/hlGoQC332VM" },
+                { title: "Introduction to SQL", url: "https://www.youtube.com/embed/hlGoQC332VM" },
+            ],
+            pdfs: [
+                { title: "SQL Guide", url: "pdfs/sql.pdf" },
+                { title: "SQL Guide", url: "pdfs/sql1.pdf" }
+            ]
+        },
+
+        "dsa": {
+            title: "Data Structures and Algorithms",
+            videos: [
+                { title: "Introduction to DSA", url: "https://www.youtube.com/embed/MdG0Vw9f1A4" },
+                { title: "Introduction to DSA", url: "https://www.youtube.com/embed/MdG0Vw9f1A4" },
+                { title: "Introduction to DSA", url: "https://www.youtube.com/embed/MdG0Vw9f1A4" },
+                { title: "Introduction to DSA", url: "https://www.youtube.com/embed/MdG0Vw9f1A4" },
+                { title: "Introduction to DSA", url: "https://www.youtube.com/embed/MdG0Vw9f1A4" },
+                { title: "Introduction to DSA", url: "https://www.youtube.com/embed/MdG0Vw9f1A4" },
+            ],
+            pdfs: [
+                { title: "DSA Guide", url: "pdfs/dsa.pdf" },
+                { title: "DSA Guide", url: "pdfs/dsa1.pdf" }
+            ]
+        },
+
+        
+        // Add other courses here...
+    };
+
+    if (courseData[courseKey]) {
+        document.getElementById("course-title").innerText = courseData[courseKey].title;
+        const videosDiv = document.getElementById("videos");
+        const pdfsDiv = document.getElementById("pdfs");
+
+        courseData[courseKey].videos.forEach(video => {
+            videosDiv.innerHTML += `
+                <div class="video-card">
+                    <iframe width="560" height="315" src="${video.url}" frameborder="0" allowfullscreen></iframe>
+                    <h3>${video.title}</h3>
+                </div>
+            `;
+        });
+
+        courseData[courseKey].pdfs.forEach(pdf => {
+            pdfsDiv.innerHTML += `<a href="${pdf.url}" target="_blank">${pdf.title}</a>`;
+        });
+    } else {
+        document.body.innerHTML = "<h1>Course Not Found</h1>";
+    }
+});
+
+    </script>
+
+</body>
+</html>
